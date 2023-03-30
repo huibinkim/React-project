@@ -1,0 +1,129 @@
+{
+ "acceptedEulaVersions" : [
+  "1.4.4"
+ ],
+ "anonymousID" : "2357dde8-89d4-41aa-a365-56aef5bdf41d",
+ "autoExec" : false,
+ "autoExpand" : false,
+ "autocompletionMode" : 1,
+ "batchSize" : 50,
+ "cacheData" : {
+  
+ },
+ "checkForUpdates" : true,
+ "connections" : [
+  {
+   "connectionName" : "myLocalDB",
+   "credentials" : [
+    {
+     "databaseName" : "admin",
+     "enabled" : false,
+     "manuallyVisibleDbs" : "",
+     "mechanism" : "SCRAM-SHA-1",
+     "useManuallyVisibleDbs" : false,
+     "userName" : "",
+     "userPasswordEncrypted" : ""
+    }
+   ],
+   "defaultDatabase" : "",
+   "isReplicaSet" : false,
+   "serverHost" : "localhost",
+   "serverPort" : 27017,
+   "ssh" : {
+    "askPassword" : false,
+    "enabled" : false,
+    "host" : "",
+    "method" : "publickey",
+    "passphraseEncrypted" : "",
+    "port" : 22,
+    "privateKeyFile" : "",
+    "publicKeyFile" : "",
+    "userName" : "",
+    "userPasswordEncrypted" : ""
+   },
+   "ssl" : {
+    "allowInvalidCertificates" : false,
+    "allowInvalidHostnames" : false,
+    "askPassphrase" : false,
+    "caFile" : "",
+    "crlFile" : "",
+    "pemKeyFile" : "",
+    "pemPassPhraseEncrypted" : "",
+    "sslEnabled" : false,
+    "useAdvancedOptions" : false,
+    "usePemFile" : false
+   },
+   "uuid" : "{e28238dd-a111-47b5-904d-42bb4e80e470}"
+  },
+  {
+   "connectionName" : "myec2",
+   "credentials" : [
+    {
+     "databaseName" : "admin",
+     "enabled" : false,
+     "manuallyVisibleDbs" : "",
+     "mechanism" : "SCRAM-SHA-1",
+     "useManuallyVisibleDbs" : false,
+     "userName" : "",
+     "userPasswordEncrypted" : ""
+    }
+   ],
+   "defaultDatabase" : "",
+   "isReplicaSet" : false,
+   "serverHost" : "13.125.36.135",
+   "serverPort" : 27017,
+   "ssh" : {
+    "askPassword" : false,
+    "enabled" : false,
+    "host" : "",
+    "method" : "publickey",
+    "passphraseEncrypted" : "",
+    "port" : 22,
+    "privateKeyFile" : "",
+    "publicKeyFile" : "",
+    "userName" : "",
+    "userPasswordEncrypted" : ""
+   },
+   "ssl" : {
+    "allowInvalidCertificates" : false,
+    "allowInvalidHostnames" : false,
+    "askPassphrase" : false,
+    "caFile" : "",
+    "crlFile" : "",
+    "pemKeyFile" : "",
+    "pemPassPhraseEncrypted" : "",
+    "sslEnabled" : false,
+    "useAdvancedOptions" : false,
+    "usePemFile" : false
+   },
+   "uuid" : ""
+  }
+ ],
+ "dbVersionsConnected" : [
+  "5.0.6"
+ ],
+ "debugMode" : false,
+ "disableConnectionShortcuts" : false,
+ "disableHttpsFeatures" : false,
+ "imported" : false,
+ "lineNumbers" : false,
+ "loadMongoRcJs" : false,
+ "minimizeToTray" : false,
+ "mongoTimeoutSec" : 10,
+ "programExitedNormally" : true,
+ "shellTimeoutSec" : 15,
+ "style" : "Native",
+ "textFontFamily" : "",
+ "textFontPointSize" : -1,
+ "timeZone" : 0,
+ "toolbars" : {
+  "connect" : true,
+  "exec" : true,
+  "explorer" : true,
+  "logs" : false,
+  "open_save" : true
+ },
+ "uuidEncoding" : 0,
+ "version" : "2.0",
+ "viewMode" : 1
+}
