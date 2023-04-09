@@ -1,9 +1,87 @@
-import Button from "./Button";
-import styles from "./App.module.css";
+// import Button from "./Button";
+// import styles from "./App.module.css";
 import { useEffect, useState } from "react";
+function App() {
+  const [loading, setLoading] = useState(true);
+  const [coins, setCoins] = useState([]);
+  useEffect(() => {
+    fetch("https://api.coinpaprika.com/v1/tickers")
+      .then((response) => response.json())
+      .then((json) => {
+        setCoins(json);
+        setLoading(false);
+      });
+  }, []);
+  return (
+    <div>
+      <h1>The coins({coins.lenght})</h1>
+      {loading ? <strong>Loading...</strong> : null}
+      <ul>
+        {coins.map((coin) => (
+          <li>
+            {coin.name}({coin.symbol}) : ${coin.quotes.USD.price}Usd
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+/*
+//#7.0 to do list part one
+function App() {
+  const [toDo, setTodo] = useState("");
+  const [toDos, setTodos] = useState([]);
+  const onChange = (event) => setTodo(event.target.value);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (toDo === "") {
+      return;
+    }
+    //길게 쓴 버젼
+    // setTodos(function(currentArray){
+    //   return
+    // })
+    setTodos((currentArray) => [toDo, ...currentArray]);
+    setTodo("");
+  };
+  console.log(toDos);
+  console.log(toDos.map((item, index) => <li key={index}>{item}</li>));
 
+    //.map() : array안에 item들이 각각 내가 원하는 무엇으로 바꿔준 후 새로운 array에 들어가게 된다.
+    //예를 들어
+    // ['there', 'are', 'you'].map(() => ":)") //결과는 [':)', ':)', ':)']
+    // ['there', 'are', 'you'].map((item) => item.toUpperCase()) //결과는 ['THERE', 'ARE', 'YOU']
+    //  {toDos.map((item, index) => (
+    //       <li key={index}>{item}</li>
+    //     ))}
+    //  >>>>> {[<li key={0}>{item}</li>, <li key={1}>"hello"</li>]}
+
+  return (
+    <div>
+      <h1>My to do({toDos.length})</h1>
+      <form onSubmit={onSubmit}>
+        <input
+          onChange={onChange}
+          value={toDo}
+          type="text"
+          placeholder="Write your to do."
+        />
+        <button>Add to do</button>
+      </form>
+      <hr />
+      <ul>
+        {toDos.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+*/
+/*
+#6.1 - 6.4 useEffect, cleanup
 function Hello() {
-  /*
+  
   //길게 풀어쓴 방법
   function byFn() {
     console.log("bye");
@@ -20,7 +98,7 @@ function Hello() {
       console.log("bye")
     };
   },[])
-  */
+  
   //보통 쓰는 방법
   useEffect(() => {
     console.log("created:)");
@@ -38,8 +116,8 @@ function App() {
       <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
     </div>
   );
-
-  /*
+*/
+/*
   //useEffect와 input, state 연결
   const [counter, setValue] = useState(0);
   const [keyword, setKeyword] = useState("");
@@ -87,7 +165,7 @@ function App() {
       <Button text={"btn"} />
     </div>
   );
-  */
-}
 
+}
+  */
 export default App;
