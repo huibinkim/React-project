@@ -4,6 +4,18 @@ import { useEffect, useState } from "react";
 function App() {
   const [loading, setLoading] = useState(true);
   const [coins, setCoins] = useState([]);
+  const [betting, setBetting] = useState(0);
+  const [dollor, setDollor] = useState(0);
+
+  const onChange = (event) => {
+    setBetting(event.target.value);
+    setDollor(1);
+  };
+
+  const onChangeInput = (event) => {
+    setDollor(event.target.value);
+  };
+
   useEffect(() => {
     fetch("https://api.coinpaprika.com/v1/tickers")
       .then((response) => response.json())
@@ -12,17 +24,33 @@ function App() {
         setLoading(false);
       });
   }, []);
+
   return (
     <div>
-      <h1>The coins({coins.lenght})</h1>
-      {loading ? <strong>Loading...</strong> : null}
-      <ul>
-        {coins.map((coin) => (
-          <li>
-            {coin.name}({coin.symbol}) : ${coin.quotes.USD.price}Usd
-          </li>
-        ))}
-      </ul>
+      <h1>The coins{loading ? "" : `(${coins.length})`}</h1>
+      {loading ? (
+        <strong>Loading...</strong>
+      ) : (
+        <select onChange={onChange}>
+          {coins.map((coin, index) => (
+            <option
+              key={index}
+              value={coin.quotes.USD.price}
+              id={coin.id}
+              symbol={coin.symbol}
+            >
+              {coin.name}({coin.symbol}) : ${coin.quotes.USD.price}Usd
+            </option>
+          ))}
+        </select>
+      )}
+      <input
+        type="number"
+        onChange={onChangeInput}
+        placeholder="put you dollor"
+        min={1}
+      />
+      <h3>you can betting {dollor / betting}</h3>
     </div>
   );
 }
