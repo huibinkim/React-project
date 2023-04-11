@@ -12,7 +12,7 @@ function Home() {
     //아래는 shorcut 임.
     const json = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.9&sort_by=year`
       )
     ).json();
     setMovies(json.data.movies);
@@ -34,6 +34,7 @@ function Home() {
           {movies.map((movie) => (
             <Movie
               key={movie.id}
+              id={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
               summary={movie.summary}
