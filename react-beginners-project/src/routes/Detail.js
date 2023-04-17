@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./Detail.module.css";
+// import styles from "./Detail.module.css";
 import Button from "../Button";
 import { Link } from "react-router-dom";
 
@@ -25,11 +25,11 @@ function Detail() {
       {loading ? (
         <h1>로딩중</h1>
       ) : (
-        <div className={styles.detailCon}>
+        <div>
           <Button>
             <Link to={`/`}>Go home</Link>
           </Button>
-          <div className={styles.detailBox}>
+          <div>
             <h1>{details.title}</h1>
             <img src={details.background_image_original} />
 

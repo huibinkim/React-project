@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import styles from "./Movie.module.css";
+// import styles from "./Movie.module.css";
 
 function Movie({ coverImg, title, summary, genres, id }) {
   return (
     <div>
-      <div className={styles.conBox}>
+      <div>
         <div>
           <img src={coverImg} alt={title} />
           <div className="con-txt">
