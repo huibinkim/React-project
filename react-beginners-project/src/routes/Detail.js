@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styles from "./Detail.module.css";
+import Button from "../Button";
 import { Link } from "react-router-dom";
 
 function Detail() {
@@ -23,17 +25,19 @@ function Detail() {
       {loading ? (
         <h1>로딩중</h1>
       ) : (
-        <div>
-          <button>
+        <div className={styles.detailCon}>
+          <Button>
             <Link to={`/`}>Go home</Link>
-          </button>
-          <h1>{details.title}</h1>
-          <img src={details.background_image_original} />
-          <hr></hr>
-          <h2>
-            {details.genres} ({details.year}): {details.rating}
-          </h2>
-          <p>{details.description_full}</p>
+          </Button>
+          <div className={styles.detailBox}>
+            <h1>{details.title}</h1>
+            <img src={details.background_image_original} />
+
+            <h2>
+              {details.genres} ({details.year}년) : {details.rating}
+            </h2>
+            <p>{details.description_full}</p>
+          </div>
         </div>
       )}
     </div>

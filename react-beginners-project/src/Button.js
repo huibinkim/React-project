@@ -1,8 +1,13 @@
 import PropTypes from "prop-types";
 import styles from "./Button.module.css";
+import { Link } from "react-router-dom";
 
-function Button({ text }) {
-  return <button className={styles.btn}>{text}</button>;
+function Button() {
+  return (
+    <button className={styles.btn}>
+      <Link to={`/`}>Go home</Link>
+    </button>
+  );
 }
 Button.prototype = {
   text: PropTypes.string.isRequired,
